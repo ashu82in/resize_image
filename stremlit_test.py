@@ -23,10 +23,10 @@ except:
     pass
     
 
-st.title("Test Title")
-st.write('My first app Hello *world!*')
+st.title("Resize Images")
+# st.write('My first app Hello *world!*')
 up_files = st.file_uploader("Upload Image Files", type = ["png", "jpeg", "jpg"] ,accept_multiple_files=True)
-st.write(up_files)
+# st.write(up_files)
 
 def resize(img, new_width):
     width, height  = img.size
@@ -50,11 +50,11 @@ for file in up_files:
     # files = os.listdir("images")
     extensions = ["jpg", "jpeg", "png", "gif", "webp"]
     im = Image.open(file)
-    st.write(file)
+    # st.write(file)
     st.image(file)
-    st.write(im.size)
+    # st.write(im.size)
     im_resized = resize(im, 400)
-    st.write(im_resized.size)
+    # st.write(im_resized.size)
     im_resized.save("images_comp/"+file.name)
     
     
@@ -62,7 +62,7 @@ for file in up_files:
 zip_path = "images_compressed.zip"
 directory_to_zip = "images_comp"
 folder = pathlib.Path(directory_to_zip)
-st.write(folder)
+# st.write(folder)
 
 
 with ZipFile(zip_path, 'w', ZIP_DEFLATED) as zip:
