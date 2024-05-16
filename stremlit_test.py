@@ -32,7 +32,7 @@ def resize(img, new_width):
     width, height  = img.size
     ratio = height/width
     new_height = int(ratio*new_width)
-    resized_image = img.resize((new_width, new_height), resample=PIL.Image.ANTIALIAS)
+    resized_image = img.resize((new_width, new_height), resample=PIL.Image.LANCZOS)
     return resized_image
 
 
