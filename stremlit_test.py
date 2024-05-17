@@ -56,7 +56,7 @@ for file in up_files:
     "File Name",
     ("Image 03", "Image 01", "Image 02"),
     index=None,
-   placeholder=file.name,
+  
 )
     st.write("You selected:", option)
     # st.write(im.size)
