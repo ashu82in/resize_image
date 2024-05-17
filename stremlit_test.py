@@ -57,6 +57,7 @@ for file in up_files:
     # files = os.listdir("images")
     extensions = ["jpg", "jpeg", "png", "gif", "webp"]
     im = Image.open(file)
+    ext = im.name.split(".")[-1]
     # st.write(file)
     st.image(file, width=250)
     option =   st.selectbox(
@@ -69,7 +70,7 @@ for file in up_files:
     # st.write(im.size)
     im_resized = resize(im, 400)
     # st.write(im_resized.size)
-    im_resized.save("images_comp/"+option)
+    im_resized.save("images_comp/"+option+"."+ext)
     
     
 
