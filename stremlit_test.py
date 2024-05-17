@@ -45,7 +45,7 @@ except:
 
 name_list = []
 for i in range(len(up_files)):
-    name_list.append("Image "+i+1)
+    name_list.append("Image "+str(i+1))
 
 
 
