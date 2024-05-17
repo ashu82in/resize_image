@@ -59,7 +59,7 @@ for file in up_files:
             index=None,
             )
 
-st.write("You selected:", option)
+    st.write("You selected:", option)
     # st.write(im.size)
     im_resized = resize(im, 400)
     # st.write(im_resized.size)
