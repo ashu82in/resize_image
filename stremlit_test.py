@@ -56,7 +56,7 @@ for file in up_files:
     option =   st.selectbox(
             "File Name",
             (file.name, "Image 02", "Image 03"),
-            index=None,
+            # index=None,
             )
 
     st.write("You selected:", option)
