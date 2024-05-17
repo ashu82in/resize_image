@@ -52,6 +52,9 @@ for file in up_files:
     im = Image.open(file)
     # st.write(file)
     st.image(file,  width=250)
+    option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"))
     # st.write(im.size)
     im_resized = resize(im, 400)
     # st.write(im_resized.size)
