@@ -62,7 +62,7 @@ for file in up_files:
     st.image(file, width=250)
     option =   st.selectbox(
             "File Name",
-            tuple([file.name] + name_list)
+            tuple([file.name] + name_list),
             index=None,
             )
 
