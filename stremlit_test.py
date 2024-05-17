@@ -43,6 +43,12 @@ try:
 except:
     pass
 
+name_list = []
+for i in range(len(up_files)):
+    name_list.append("Image "+i+1)
+
+
+
 st.write(len(up_files))
 
 for file in up_files:
@@ -55,7 +61,7 @@ for file in up_files:
     st.image(file, width=250)
     option =   st.selectbox(
             "File Name",
-            (file.name, "Image 02", "Image 03"),
+            tuple([file.name] + name_list)
             # index=None,
             )
 
