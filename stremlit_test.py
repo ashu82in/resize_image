@@ -43,7 +43,7 @@ try:
 except:
     pass
 
-st.write(length(up_files))
+st.write(len(up_files))
 
 for file in up_files:
     
