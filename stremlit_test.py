@@ -53,12 +53,13 @@ for file in up_files:
     # st.write(file)
     st.image(file,  width=250)
     option = st.selectbox(
-    "File Name",
-    ("Image 03", "Image 01", "Image 02"),
-    index=None,
-  
+   "How would you like to be contacted?",
+   ("Email", "Home phone", "Mobile phone"),
+   index=None,
+   placeholder="Select contact method...",
 )
-    st.write("You selected:", option)
+
+st.write("You selected:", option)
     # st.write(im.size)
     im_resized = resize(im, 400)
     # st.write(im_resized.size)
