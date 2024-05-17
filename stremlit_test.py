@@ -51,7 +51,7 @@ for file in up_files:
     extensions = ["jpg", "jpeg", "png", "gif", "webp"]
     im = Image.open(file)
     # st.write(file)
-    st.image(file,  width=100)
+    st.image(file,  width=250)
     # st.write(im.size)
     im_resized = resize(im, 400)
     # st.write(im_resized.size)
