@@ -54,7 +54,10 @@ for file in up_files:
     st.image(file,  width=250)
     option = st.selectbox(
     "File Name",
-    (file.name, "Image 01", "Image 02"))
+    (file.name, "Image 01", "Image 02")
+    index=None,
+   placeholder=file.name,
+)
     st.write("You selected:", option)
     # st.write(im.size)
     im_resized = resize(im, 400)
