@@ -52,7 +52,7 @@ for file in up_files:
     extensions = ["jpg", "jpeg", "png", "gif", "webp"]
     im = Image.open(file)
     # st.write(file)
-    st.image(file)
+    st.image(file, width=250)
     option =   st.selectbox(
             "File Name",
             (file.name, "Image 02", "Image 03"),
