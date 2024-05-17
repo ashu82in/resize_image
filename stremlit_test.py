@@ -21,7 +21,8 @@ try:
     shutil.rmtree("images_comp")
 except:
     pass
-    
+
+name_index_dict= {}
 
 st.title("Resize Images")
 # st.write('My first app Hello *world!*')
@@ -44,6 +45,7 @@ except:
     pass
 
 name_list = []
+
 for i in range(len(up_files)):
     name_list.append("Image "+str(i+1))
 
@@ -52,7 +54,11 @@ for i in range(len(up_files)):
 st.write(len(up_files))
 
 for file in up_files:
-    
+    try:
+        a = name_index_dict[file.name]
+    except:
+        name_index_dict[file.name] = 0
+
     
     # files = os.listdir("images")
     extensions = ["jpg", "jpeg", "png", "gif", "webp"]
@@ -63,10 +69,14 @@ for file in up_files:
     option =   st.selectbox(
             "File Name",
             tuple([file.name] + name_list),
-            index=1,
+            index=name_index_dict[file.name],
             )
 
     st.write("You selected:", option)
+    list_temp = [file.name] + name_list
+    position = list_temp.indexOf(option)
+
+    name_index_dict[file.name] = position
     # st.write(im.size)
     im_resized = resize(im, 400)
     # st.write(im_resized.size)
