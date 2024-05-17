@@ -69,7 +69,7 @@ for file in up_files:
     # st.write(im.size)
     im_resized = resize(im, 400)
     # st.write(im_resized.size)
-    im_resized.save("images_comp/"+file.name)
+    im_resized.save("images_comp/"+option)
     
     
 
