@@ -43,12 +43,12 @@ try:
 except:
     pass
 
- option = st.selectbox(
-   "How would you like to be contacted?",
-   ("Email", "Home phone", "Mobile phone"),
-   index=None,
-   placeholder="Select contact method..",
-)
+ option = st.selectbox(_
+          "How would you like to be contacted?",
+          ("Email", "Home phone", "Mobile phone"),_
+          index=None,_
+          placeholder="Select contact method..",
+          )
 
 st.write("You selected:", option)
 
