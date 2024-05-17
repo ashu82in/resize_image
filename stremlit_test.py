@@ -63,7 +63,7 @@ for file in up_files:
     option =   st.selectbox(
             "File Name",
             tuple([file.name] + name_list),
-            #index=None,
+            index=1,
             )
 
     st.write("You selected:", option)
