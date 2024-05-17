@@ -74,7 +74,7 @@ for file in up_files:
 
     st.write("You selected:", option)
     list_temp = [file.name] + name_list
-    position = list_temp.indexOf(option)
+    position = list_temp.index(option)
 
     name_index_dict[file.name] = position
     # st.write(im.size)
