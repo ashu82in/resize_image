@@ -43,14 +43,7 @@ try:
 except:
     pass
 
-option =   st.selectbox(
-            "How would you like to be contacted?",
-            ("Email", "Home phone", "Mobile phone"),
-            index=None,
-            placeholder="Select contact method..",
-            )
 
-st.write("You selected:", option)
 
 for file in up_files:
     
@@ -60,7 +53,13 @@ for file in up_files:
     im = Image.open(file)
     # st.write(file)
     st.image(file)
-   
+    option =   st.selectbox(
+            "File Name",
+            (file.name, "Image 02", "Image 03"),
+            index=None,
+            )
+
+st.write("You selected:", option)
     # st.write(im.size)
     im_resized = resize(im, 400)
     # st.write(im_resized.size)
