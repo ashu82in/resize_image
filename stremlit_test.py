@@ -43,7 +43,7 @@ try:
 except:
     pass
 
- option =   st.selectbox(
+option =   st.selectbox(
             "How would you like to be contacted?",
             ("Email", "Home phone", "Mobile phone"),
             index=None,
