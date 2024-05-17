@@ -37,7 +37,8 @@ def resize(img, new_width):
     return resized_image
 
 
-
+title = st.text_input("Image Number to Start with", 1)
+st.write("The image numbering will start from: ", title)
 
 try:
     os.mkdir("images_comp")
@@ -47,11 +48,12 @@ except:
 name_list = []
 
 for i in range(len(up_files)):
-    name_list.append("Image "+str(i+1))
+    name_list.append("Image "+str(title+1))
 
 
 
 st.write(len(up_files))
+
 
 for file in up_files:
     try:
