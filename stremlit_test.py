@@ -42,7 +42,7 @@ def resize(img, new_width):
 
 
 def updateTable():
-    st.write{"Test")
+    st.write("Test")
 
 title = st.text_input("Image Number to Start with", 1)
 st.write("The image numbering will start from: ", title)
