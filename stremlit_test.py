@@ -14,7 +14,11 @@ import zipfile
 from zipfile import ZipFile, ZIP_DEFLATED
 import pathlib
 import shutil
-
+import docx
+import docxtpl
+from docx import Document
+from docx.shared import Inches
+from docx.enum.section import WD_ORIENT
 
 
 try:
@@ -36,6 +40,9 @@ def resize(img, new_width):
     resized_image = img.resize((new_width, new_height), resample=PIL.Image.LANCZOS)
     return resized_image
 
+
+def updateTable():
+    st.write{"Test")
 
 title = st.text_input("Image Number to Start with", 1)
 st.write("The image numbering will start from: ", title)
@@ -91,6 +98,16 @@ directory_to_zip = "images_comp"
 folder = pathlib.Path(directory_to_zip)
 # st.write(folder)
 
+#Create a document with Landscape and saved
+document = Document()
+section = document.sections[0]
+section.orientation = WD_ORIENT.LANDSCAPE
+new_width, new_height = section.page_height, section.page_width
+section.page_width = new_width
+section.page_height = new_height
+document.save("Table_Word.docx")
+# Document Created
+
 
 with ZipFile(zip_path, 'w', ZIP_DEFLATED) as zip:
     for file in folder.iterdir():
@@ -102,6 +119,15 @@ with open("images_compressed.zip", "rb") as fp:
         data=fp,
         file_name="images_compressed.zip",
         mime="application/zip"
+    )
+
+with open("Table_Word.docx", "rb") as fp:
+    btn = st.download_button(
+        label="Word File with Table",
+        data=fp,
+        on_click = updateTable(),
+        file_name="Table_Word_docx",
+        mime="docx"
     )
 
 os.remove(zip_path)
